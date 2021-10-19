@@ -1,0 +1,8 @@
+Add "New book" button to page
+
+Add "Read" button toggle to each book
+
+Add "Delete" button to each book
+
+Store data locally
+
