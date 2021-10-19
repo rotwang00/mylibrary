@@ -1,6 +1,11 @@
 let myLibrary = [];
 let container = document.getElementById("container");
 
+const newBookButton = document.getElementById("newBookButton");
+newBookButton.addEventListener('click', () => {
+    enterNewBookInfo();
+})
+
 function Book(title, author, pages, read, id) {
     this.title = title;
     this.author =author;
@@ -19,6 +24,10 @@ Book.prototype.info = function() {
         infoString += `, id = ${this.id}`;
         return infoString;
 };
+
+function enterNewBookInfo() {
+    
+}
 
 function addBookToLibrary(newTitle, newAuthor, newPages, newRead) {
     const newId = Math.random().toString(16).slice(2);
