@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <title>JavaScript Practice</title>
+    <title>My Library</title>
 </head>
 <body>
     <h1>My Library</h1>
@@ -14,19 +14,23 @@
     <div id="newBookPopup">
         <!-- I can leave "action" blank, and the info will be submitted to this page.
             I need to add a JS event listener to handle the data. -->
-        <form action="" class="form-container">
+        <form action="http://127.0.0.1:5500/index.html" method="GET" class="form-container">
             <h3>Add new book</h3>
 
             <label for="title">Title</label>
-            <input type="text" name="title" required>
+            <input type="text" id="title" name="title" required>
 
             <label for="author">Author</label>
-            <input type="text" name="author" required>
+            <input type="text" id="author" name="author" required>
 
             <label for="pages">Number of pages</label>
-            <input type="number" name="pages" required>
+            <input type="number" id="pages" name="pages" required>
 
-            
+            <label for="read">Read?</label>
+            <input type="checkbox" id="read" name="pages">
+
+            <label for="submit"></label>
+            <input type="submit" id="submit" name="submit" value="Submit">
 
         </form>
     </div>

@@ -8,7 +8,7 @@ Add "Delete" button to each book
 
 Store data locally
 
-Refine book display without loop:
+Refine book display without looping through properties:
 "Title:"
 "Author:"
 "Pages:"
