@@ -1,12 +1,12 @@
-Add "New book" button to page
-Add "Read?" checkbox to form
+DONE Add "New book" button to page
+DONE Add "Read?" checkbox to form
 Make form popup
 
 Add "Read" button toggle to each book. Should be added to Book prototype
 
 Add "Delete" button to each book
 
-Store data locally
+DONE Store data locally
 
 Refine book display without looping through properties:
 "Title:"
@@ -14,4 +14,4 @@ Refine book display without looping through properties:
 "Pages:"
 No id
 
-Change page title
+DONE Change page title
