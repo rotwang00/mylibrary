@@ -59,10 +59,11 @@ function updateDisplay() {
     container.innerHTML = '';
 
     myLibrary.forEach(function (book) {
+        // This needs improving
         const bookHTML = document.createElement("div");
         const values = Object.values(book);
         for (const property of values) {
-            const newProperty = document.createElement("h5");
+            const newProperty = document.createElement("p");
             newProperty.textContent = property;
             if  (property === true) {
                 newProperty.textContent = 'Read? yes';
@@ -72,14 +73,30 @@ function updateDisplay() {
             }
             bookHTML.appendChild(newProperty);
         }
-        const btn = document.createElement('button');
-        btn.textContent = 'Delete';
-        btn.addEventListener('click', function() {
+
+        // Add Read toggle button
+        const btn1 = document.createElement('button');
+        btn1.textContent = 'Toggle Read';
+        btn1.addEventListener('click', function() {
+            toggleRead(book.id);
+        });
+        bookHTML.appendChild(btn1);
+
+        // Add Delete button
+        const btn2 = document.createElement('button');
+        btn2.textContent = 'Delete';
+        btn2.addEventListener('click', function() {
             deleteBook(book.id);
         });
-        bookHTML.appendChild(btn);
+        bookHTML.appendChild(btn2);
 
-        bookHTML.classList.add('book');
+        // Add Bootstrap classes
+        bookHTML.classList.add(
+            'card',
+            'bg-secondary',
+            'bg-gradient',
+            'text-white'
+            );
 
         container.appendChild(bookHTML);
     });
@@ -87,6 +104,13 @@ function updateDisplay() {
 
 function updateLocalStorage() {
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+function toggleRead(toggleReadID) {
+    const toBeReadBook = myLibrary.find(book => book.id === toggleReadID);
+    toBeReadBook.read = !toBeReadBook.read;
+    updateDisplay();
+    updateLocalStorage();
 }
 
 function deleteBook(toBeDeletedID) {

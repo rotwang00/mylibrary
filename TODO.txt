@@ -2,7 +2,7 @@ DONE Add "New book" button to page
 DONE Add "Read?" checkbox to form
 Make form popup
 
-Add "Read" button toggle to each book. Should be added to Book prototype
+DONE Add "Read" button toggle to each book. Should be added to Book prototype
 
 DONE Add "Delete" button to each book
 
