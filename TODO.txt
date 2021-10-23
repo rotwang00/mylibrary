@@ -4,7 +4,7 @@ Make form popup
 
 Add "Read" button toggle to each book. Should be added to Book prototype
 
-Add "Delete" button to each book
+DONE Add "Delete" button to each book
 
 DONE Store data locally
 

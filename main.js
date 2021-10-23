@@ -48,10 +48,8 @@ function addBookToLibrary(newTitle, newAuthor, newPages, newRead) {
     // Save new book to library
     myLibrary.push(newBook);
 
-    // Save library to localStorage
-    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
-
     updateDisplay();
+    updateLocalStorage();
 };
 
 // Remove all books from DOM, then add them all back.
@@ -77,7 +75,7 @@ function updateDisplay() {
         const btn = document.createElement('button');
         btn.textContent = 'Delete';
         btn.addEventListener('click', function() {
-            deleteBook(this.title);
+            deleteBook(book.id);
         });
         bookHTML.appendChild(btn);
 
@@ -87,8 +85,14 @@ function updateDisplay() {
     });
 };
 
-function deleteBook(toBeDeleted) {
-    console.log(toBeDeleted);
+function updateLocalStorage() {
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+function deleteBook(toBeDeletedID) {
+    myLibrary = myLibrary.filter(book => book.id !== toBeDeletedID);
+    updateDisplay();
+    updateLocalStorage();
 };
 
 // addBookToLibrary('Dune', 'Frank Herbert', 400, true);
