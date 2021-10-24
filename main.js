@@ -62,17 +62,54 @@ function updateDisplay() {
         // This needs improving
         const bookHTML = document.createElement("div");
         const values = Object.values(book);
-        for (const property of values) {
-            const newProperty = document.createElement("p");
-            newProperty.textContent = property;
-            if  (property === true) {
-                newProperty.textContent = 'Read? yes';
-            }
-            if (property === false) {
-                newProperty.textContent = 'Read? no';
-            }
-            bookHTML.appendChild(newProperty);
+        
+        // Add title with title class
+        const newTitle = document.createElement('h3');
+        newTitle.textContent = book.title;
+        newTitle.classList.add(
+            'card-title'
+        )
+        bookHTML.appendChild(newTitle);
+        
+        // Add author with text class
+        const newAuthor = document.createElement('p');
+        newAuthor.textContent = book.author;
+        newAuthor.classList.add(
+            'card-text'
+        )
+        bookHTML.appendChild(newAuthor);
+
+        // Add pages with text class
+        const newPages = document.createElement('p');
+        newPages.textContent = book.pages + ' pages';
+        newPages.classList.add(
+            'card-text'
+        )
+        bookHTML.appendChild(newPages);
+
+        // Add read with text class
+        const newRead = document.createElement('p');
+        if (book.read === true) {
+            newRead.textContent = 'Already read';
+        } else {
+            newRead.textContent = 'Not read yet';
         }
+        newRead.classList.add(
+            'card-text'
+        )
+        bookHTML.appendChild(newRead);
+
+        // for (const property of values) {
+        //     const newProperty = document.createElement("p");
+        //     newProperty.textContent = property;
+        //     if  (property === true) {
+        //         newProperty.textContent = 'Read? yes';
+        //     }
+        //     if (property === false) {
+        //         newProperty.textContent = 'Read? no';
+        //     }
+        //     bookHTML.appendChild(newProperty);
+        // }
 
         // Add Read toggle button
         const btn1 = document.createElement('button');

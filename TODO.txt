@@ -8,10 +8,6 @@ DONE Add "Delete" button to each book
 
 DONE Store data locally
 
-Refine book display without looping through properties:
-"Title:"
-"Author:"
-"Pages:"
-No id
+DONE Refine book display without looping through properties:
 
 DONE Change page title
